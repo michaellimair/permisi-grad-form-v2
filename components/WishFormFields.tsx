@@ -91,10 +91,10 @@ const WishFormFields: FC<WishFormFieldsProps> = ({
         render={({ field }) => (
           <FormControl variant="outlined" margin="normal" fullWidth error={!!errors.graduateId}>
             <InputLabel>Send to</InputLabel>
-            <Select variant="outlined" label="Send to" {...field} value={field.value ?? ''}>
-              <MenuItem value={undefined}>-</MenuItem>
+            <Select native variant="outlined" label="Send to" {...field} value={field.value ?? ''}>
+              <option value="">-</option>
               {graduates.map((graduate) => (
-                <MenuItem value={graduate.id} key={graduate.id}>{graduate.name}</MenuItem>
+                <option value={graduate.id} key={graduate.id}>{graduate.name}</option>
               ))}
             </Select>
             <FormHelperText>{errors.graduateId && 'Please select a graduate'}</FormHelperText>
